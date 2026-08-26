@@ -1,0 +1,36 @@
+# ============================================================================
+# requirements.txt  —  Python libraries needed to run the project.
+# Install:  pip install -r requirements.txt
+#
+# NOTE (Apple Silicon / Mac): torch runs on Mac via MPS (Metal GPU). In this
+# project we trained the 2D model on MPS in ~15 minutes (3 epochs, val Dice ~0.81).
+# For longer/larger training a Kaggle/Colab GPU is faster. (Details: src/config.py)
+# ============================================================================
+
+# --- Deep learning core ---
+torch>=2.1              # PyTorch: models, tensors, autograd
+torchvision>=0.16       # Image utilities (used by some MONAI components)
+
+# --- Data reading ---
+h5py>=3.8               # Reads the PRE-SLICED .h5 dataset (the version we use)
+
+# --- Medical imaging (optional) ---
+monai>=1.3              # For stronger architectures like Attention U-Net (get_model factory)
+# nibabel>=5.1          # ONLY needed for the raw .nii version (we used h5)
+# albumentations>=1.3   # ONLY for the .nii 2D pipeline (with h5 we flip via torch)
+
+# --- Explainability (XAI) ---
+grad-cam>=1.5           # pytorch-grad-cam: Grad-CAM heatmaps
+
+# --- Scientific stack / metrics / visualization ---
+numpy>=1.24
+pandas>=2.0             # Reading name_mapping.csv, survival_info.csv
+scikit-learn>=1.3       # train/val split, extra metrics
+matplotlib>=3.7         # Plotting MRI slices and loss curves
+tqdm>=4.66              # Progress bar in the training loop
+
+# --- Web demo ---
+streamlit>=1.30         # Interactive portfolio UI
+
+# --- Experiment tracking (optional but recommended) ---
+tensorboard>=2.15       # Live monitoring of loss/Dice curves

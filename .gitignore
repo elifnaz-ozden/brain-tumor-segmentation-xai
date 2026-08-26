@@ -1,0 +1,37 @@
+# ============================================================================
+# .gitignore  —  Defines WHAT WILL NOT be pushed to GitHub.
+# Rule: raw data (GBs of MRI), model weights and temporary files NEVER enter
+#       the repo. They are regenerated on another machine via scripts.
+# ============================================================================
+
+# --- Data (BraTS pre-sliced .h5 slices; ~15 GB, not committed) ---
+data/*
+!data/download_data.sh          # But KEEP the download script in the repo (exception: '!')
+!data/.gitkeep
+
+# --- Model weights / checkpoints (hundreds of MB) ---
+*.pth
+*.pt
+*.ckpt
+*.onnx
+checkpoints/
+outputs/
+runs/                            # TensorBoard logs
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# --- Jupyter / editors ---
+.vscode/
+.idea/
+*.DS_Store
+desktop.ini
+
+# --- Kaggle credentials (must NEVER be committed — private API key!) ---
+kaggle.json
