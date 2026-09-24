@@ -3,7 +3,7 @@
 # Install:  pip install -r requirements.txt
 #
 # NOTE (Apple Silicon / Mac): torch runs on Mac via MPS (Metal GPU). In this
-# project we trained the 2D model on MPS in ~15 minutes (3 epochs, val Dice ~0.81).
+# project we trained the 2D model on MPS in ~15 minutes (5 epochs, val Dice ~0.835).
 # For longer/larger training a Kaggle/Colab GPU is faster. (Details: src/config.py)
 # ============================================================================
 
