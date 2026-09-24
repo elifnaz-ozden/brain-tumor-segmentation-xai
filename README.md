@@ -85,7 +85,7 @@ The data (~15 GB) and model weights are not included in the repository.
 ## Dataset
 
 This project uses the **pre-sliced HDF5 version** of the BraTS 2020 training data from Kaggle:
-[Brain Tumor Segmentation (BraTS2020)](https://www.kaggle.com/datasets/awsaf49/brats2020-training-data) by awsaf49, released under **CC0: Public Domain**.
+[Brain Tumor Segmentation (BraTS2020)](https://www.kaggle.com/datasets/awsaf49/brats2020-training-data) by Awsaf ([awsaf49](https://www.kaggle.com/awsaf49)), released under **CC0: Public Domain**.
 Only 2D slices derived from this de-identified (skull-stripped, co-registered) data are shown in the figures; the data itself is not redistributed in this repository.
 
 ## References
@@ -93,10 +93,10 @@ Only 2D slices derived from this de-identified (skull-stripped, co-registered) d
 ### Dataset (as required by the BraTS data usage agreement)
 
 1. B. H. Menze, A. Jakab, S. Bauer, J. Kalpathy-Cramer, K. Farahani, J. Kirby, et al., "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)", *IEEE Transactions on Medical Imaging*, 34(10), 1993–2024, 2015. DOI: [10.1109/TMI.2014.2377694](https://doi.org/10.1109/TMI.2014.2377694)
-2. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. S. Kirby, et al., "Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features", *Nature Scientific Data*, 4:170117, 2017. DOI: [10.1038/sdata.2017.117](https://doi.org/10.1038/sdata.2017.117)
+2. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. S. Kirby, et al., "Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features", *Scientific Data*, 4:170117, 2017. DOI: [10.1038/sdata.2017.117](https://doi.org/10.1038/sdata.2017.117)
 3. S. Bakas, M. Reyes, A. Jakab, S. Bauer, M. Rempfler, A. Crimi, et al., "Identifying the Best Machine Learning Algorithms for Brain Tumor Segmentation, Progression Assessment, and Overall Survival Prediction in the BRATS Challenge", arXiv:[1811.02629](https://arxiv.org/abs/1811.02629), 2018.
-4. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels and Radiomic Features for the Pre-operative Scans of the TCGA-GBM collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.KLXWJJ1Q](https://doi.org/10.7937/K9/TCIA.2017.KLXWJJ1Q)
-5. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels and Radiomic Features for the Pre-operative Scans of the TCGA-LGG collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.GJQ7R0EF](https://doi.org/10.7937/K9/TCIA.2017.GJQ7R0EF)
+4. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels for the Pre-operative Scans of the TCGA-GBM collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.KLXWJJ1Q](https://doi.org/10.7937/K9/TCIA.2017.KLXWJJ1Q)
+5. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels for the Pre-operative Scans of the TCGA-LGG collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.GJQ7R0EF](https://doi.org/10.7937/K9/TCIA.2017.GJQ7R0EF)
 
 ### Methods
 
@@ -108,7 +108,11 @@ Only 2D slices derived from this de-identified (skull-stripped, co-registered) d
 
 ### Libraries
 
-11. A. Paszke, S. Gross, F. Massa, A. Lerer, et al., "PyTorch: An Imperative Style, High-Performance Deep Learning Library", *NeurIPS*, 2019. [pytorch.org](https://pytorch.org)
+11. A. Paszke, S. Gross, F. Massa, A. Lerer, et al., "PyTorch: An Imperative Style, High-Performance Deep Learning Library", *NeurIPS*, 2019. arXiv:[1912.01703](https://arxiv.org/abs/1912.01703)
 12. M. J. Cardoso, W. Li, R. Brown, N. Ma, et al., "MONAI: An open-source framework for deep learning in healthcare", arXiv:[2211.02701](https://arxiv.org/abs/2211.02701), 2022.
 13. J. Gildenblat and contributors, "PyTorch library for CAM methods" (pytorch-grad-cam), 2021. [github.com/jacobgil/pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
 14. Also used: [NumPy](https://numpy.org), [h5py](https://www.h5py.org), [scikit-learn](https://scikit-learn.org) (patient-level split), [Matplotlib](https://matplotlib.org), [Streamlit](https://streamlit.io), [tqdm](https://github.com/tqdm/tqdm).
+
+## License
+
+The code is released under the [MIT License](LICENSE). The BraTS data is subject to its own terms of use (see [Dataset](#dataset) and the references above).
