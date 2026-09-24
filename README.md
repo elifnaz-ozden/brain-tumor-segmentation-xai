@@ -82,21 +82,33 @@ streamlit run app/app.py             # interactive demo
 
 The data (~15 GB) and model weights are not included in the repository.
 
-## Dataset & Citation
+## Dataset
 
-[BraTS 2020 (HDF5) on Kaggle](https://www.kaggle.com/datasets/awsaf49/brats2020-training-data)
+This project uses the **pre-sliced HDF5 version** of the BraTS 2020 training data from Kaggle:
+[Brain Tumor Segmentation (BraTS2020)](https://www.kaggle.com/datasets/awsaf49/brats2020-training-data) by awsaf49, released under **CC0: Public Domain**.
+Only 2D slices derived from this de-identified (skull-stripped, co-registered) data are shown in the figures; the data itself is not redistributed in this repository.
 
-```bibtex
-@article{menze2015brats,
-  title={The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)},
-  author={Menze, Bjoern H and others},
-  journal={IEEE Transactions on Medical Imaging}, volume={34}, number={10},
-  pages={1993--2024}, year={2015}
-}
-@article{bakas2017advancing,
-  title={Advancing The Cancer Genome Atlas glioma MRI collections with expert
-         segmentation labels and radiomic features},
-  author={Bakas, Spyridon and others},
-  journal={Scientific Data}, volume={4}, pages={170117}, year={2017}
-}
-```
+## References
+
+### Dataset (as required by the BraTS data usage agreement)
+
+1. B. H. Menze, A. Jakab, S. Bauer, J. Kalpathy-Cramer, K. Farahani, J. Kirby, et al., "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)", *IEEE Transactions on Medical Imaging*, 34(10), 1993–2024, 2015. DOI: [10.1109/TMI.2014.2377694](https://doi.org/10.1109/TMI.2014.2377694)
+2. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. S. Kirby, et al., "Advancing The Cancer Genome Atlas glioma MRI collections with expert segmentation labels and radiomic features", *Nature Scientific Data*, 4:170117, 2017. DOI: [10.1038/sdata.2017.117](https://doi.org/10.1038/sdata.2017.117)
+3. S. Bakas, M. Reyes, A. Jakab, S. Bauer, M. Rempfler, A. Crimi, et al., "Identifying the Best Machine Learning Algorithms for Brain Tumor Segmentation, Progression Assessment, and Overall Survival Prediction in the BRATS Challenge", arXiv:[1811.02629](https://arxiv.org/abs/1811.02629), 2018.
+4. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels and Radiomic Features for the Pre-operative Scans of the TCGA-GBM collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.KLXWJJ1Q](https://doi.org/10.7937/K9/TCIA.2017.KLXWJJ1Q)
+5. S. Bakas, H. Akbari, A. Sotiras, M. Bilello, M. Rozycki, J. Kirby, et al., "Segmentation Labels and Radiomic Features for the Pre-operative Scans of the TCGA-LGG collection", *The Cancer Imaging Archive*, 2017. DOI: [10.7937/K9/TCIA.2017.GJQ7R0EF](https://doi.org/10.7937/K9/TCIA.2017.GJQ7R0EF)
+
+### Methods
+
+6. O. Ronneberger, P. Fischer, T. Brox, "U-Net: Convolutional Networks for Biomedical Image Segmentation", *MICCAI*, 2015. arXiv:[1505.04597](https://arxiv.org/abs/1505.04597)
+7. F. Milletari, N. Navab, S.-A. Ahmadi, "V-Net: Fully Convolutional Neural Networks for Volumetric Medical Image Segmentation" (Dice loss), *3DV*, 2016. arXiv:[1606.04797](https://arxiv.org/abs/1606.04797)
+8. T.-Y. Lin, P. Goyal, R. Girshick, K. He, P. Dollár, "Focal Loss for Dense Object Detection", *ICCV*, 2017. arXiv:[1708.02002](https://arxiv.org/abs/1708.02002)
+9. R. R. Selvaraju, M. Cogswell, A. Das, R. Vedantam, D. Parikh, D. Batra, "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization", *ICCV*, 2017. arXiv:[1610.02391](https://arxiv.org/abs/1610.02391)
+10. O. Oktay, J. Schlemper, L. Le Folgoc, M. Lee, M. Heinrich, K. Misawa, et al., "Attention U-Net: Learning Where to Look for the Pancreas", *MIDL*, 2018. arXiv:[1804.03999](https://arxiv.org/abs/1804.03999) (optional model via MONAI)
+
+### Libraries
+
+11. A. Paszke, S. Gross, F. Massa, A. Lerer, et al., "PyTorch: An Imperative Style, High-Performance Deep Learning Library", *NeurIPS*, 2019. [pytorch.org](https://pytorch.org)
+12. M. J. Cardoso, W. Li, R. Brown, N. Ma, et al., "MONAI: An open-source framework for deep learning in healthcare", arXiv:[2211.02701](https://arxiv.org/abs/2211.02701), 2022.
+13. J. Gildenblat and contributors, "PyTorch library for CAM methods" (pytorch-grad-cam), 2021. [github.com/jacobgil/pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
+14. Also used: [NumPy](https://numpy.org), [h5py](https://www.h5py.org), [scikit-learn](https://scikit-learn.org) (patient-level split), [Matplotlib](https://matplotlib.org), [Streamlit](https://streamlit.io), [tqdm](https://github.com/tqdm/tqdm).
